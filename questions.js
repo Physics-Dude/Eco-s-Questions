@@ -6,7 +6,7 @@ Randomly selects a new one whenever a mouse click is detected anywhere on the pa
 
 Questions come from ongoing discussions and experiences with friends mostly in VRChat.
 
-Array of questions last updated: 4 October 2024
+Array of questions last updated: 4 October 2024 
 
 */
 
@@ -526,3 +526,7 @@ updateRandomString();
 document.body.addEventListener('mousedown', startRandomStringLoop);
 document.body.addEventListener('mouseup', stopRandomStringLoop);
 document.body.addEventListener('mouseleave', stopRandomStringLoop); // Stop if the mouse leaves the window
+
+document.body.addEventListener('touchstart', startRandomStringLoop);
+document.body.addEventListener('touchend', stopRandomStringLoop);
+document.body.addEventListener('touchcancel', stopRandomStringLoop); // Handles touch events that are canceled or interrupted
