@@ -490,7 +490,8 @@ const strings = [
 	"What does regret mean to you?",
 	"What was the last piece of music you remember listening to?",
 	"What rare/special item would you drop if you were a character in a video game?",
-	"What gift can someone give you to increase your friendship level?"
+	"What gift can someone give you to increase your friendship level?",
+	"What is a subject that makes you excited?"
 	
 	// More to be added. Don't forget final array comma!
 
