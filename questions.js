@@ -6,7 +6,7 @@ Randomly selects a new one whenever a mouse click is detected anywhere on the pa
 
 Questions come from ongoing discussions and experiences with friends mostly in VRChat.
 
-Array of questions last updated: 4 October 2024 
+Array of questions last updated: 24 April 2025 
 
 */
 
