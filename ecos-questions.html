@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random String Display</title>
+    <title>Eco's Questions</title>
     <style>
         body {
             display: flex;
@@ -25,15 +25,23 @@
 		
 		div {margin:0;padding:0;position:absolute;font-size:0;overflow:hidden; }
 			canvas{background-color:#000; overflow:hidden; width:100%;}
+			
+		#dbg{
+			font-size: 2vw;
+            color: #f0f0f0;
+			position: absolute;
+			top: 1em;
+			 text-align: center;
+		}
     </style>
 </head>
 
 	<body onload="start()" onresize="resize()" onorientationchange="resize()" onmousedown="context.fillStyle='rgba(0,0,0,'+opacity+')'" onmouseup="context.fillStyle='rgb(0,0,0)'">
     <div id="randomString">Click and hold to get a random string!</div>
+	<div id="dbg"></div>
    <script src="questions.js"></script>
-        
-    </script>
-	
+   
+   
 	<script type="text/javascript">
 			function $i(id) { return document.getElementById(id); }
 			function $r(parent,child) { (document.getElementById(parent)).removeChild(document.getElementById(child)); }
