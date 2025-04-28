@@ -910,36 +910,85 @@ const strings = [
 //};  //Udon placeholder for VRChat world, Eco's Alcove.
 ];
 
-let intervalId;
-let autoUpdateId;
+var randArray = [];
+let currentIndex = -1;
 
-function updateRandomString() {
-	const randomIndex = Math.floor(Math.random() * strings.length);
-	document.getElementById('randomString').textContent = strings[randomIndex];
+let inactivityTimer; // Timer for inactivity
+
+const randomString = document.getElementById('randomString');
+const dbg = document.getElementById('dbg');
+
+function updateDisplay() {
+  if (currentIndex >= 0 && currentIndex < randArray.length) {
+    randomString.textContent = randArray[currentIndex];
+    dbg.textContent = currentIndex + " / " + strings.length;
+  } else {
+    randomString.textContent = "← or →";
+  }
 }
 
-function startRandomStringLoop() {
-	if (!intervalId) {
-		intervalId = setInterval(updateRandomString, 1); // Adjust the interval time (in milliseconds) as needed
-		clearInterval(autoUpdateId);
-	}
+function pickRandomUniqueString() {
+  const availableStrings = strings.filter(str => !randArray.includes(str));
+  if (availableStrings.length === 0) {
+	randArray = [];
+	currentIndex = 0;
+    return "That was all the questions!";
+  }
+  const randomIndex = Math.floor(Math.random() * availableStrings.length);
+  return availableStrings[randomIndex];
 }
 
-function stopRandomStringLoop() {
-	clearInterval(intervalId);
-	intervalId = null;
+function handleRightSideClick() {
+  currentIndex++;
+  if (currentIndex >= randArray.length) {
+    const randomStr = pickRandomUniqueString();
+    if (randArray.length <= strings.length) {
+      randArray.push(randomStr);
+    }
+  }
+  updateDisplay();
 }
 
-// Update the string every 30 seconds (30000 milliseconds)
-autoUpdateId = setInterval(updateRandomString, 31000);
+function handleLeftSideClick() {
+  if (currentIndex > 0) {
+    currentIndex--;
+    updateDisplay();
+  }
+}
 
-// Initial update
-updateRandomString();
+function resetInactivityTimer() {
+  clearTimeout(inactivityTimer);
+  inactivityTimer = setTimeout(() => {
+    handleRightSideClick(); 
+  }, 31000); 
+}
 
-document.body.addEventListener('mousedown', startRandomStringLoop);
-document.body.addEventListener('mouseup', stopRandomStringLoop);
-document.body.addEventListener('mouseleave', stopRandomStringLoop); // Stop if the mouse leaves the window
+document.addEventListener('click', (e) => {
+  const clickX = e.clientX;
+  const screenWidth = window.innerWidth;
 
-document.body.addEventListener('touchstart', startRandomStringLoop);
-document.body.addEventListener('touchend', stopRandomStringLoop);
-document.body.addEventListener('touchcancel', stopRandomStringLoop); // Handles touch events that are canceled or interrupted
+  if (clickX < screenWidth / 2) {
+    handleLeftSideClick();
+  } else {
+    handleRightSideClick();
+  }
+  resetInactivityTimer(); 
+});
+
+document.addEventListener('mousemove', () => {
+  resetInactivityTimer(); 
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowLeft') {
+    handleLeftSideClick();
+    resetInactivityTimer();
+  } else if (e.key === 'ArrowRight') {
+    handleRightSideClick();
+    resetInactivityTimer();
+  }
+});
+
+// Initial display
+updateDisplay();
+resetInactivityTimer(); // Start inactivity timer on load
