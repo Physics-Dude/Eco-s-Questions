@@ -923,7 +923,7 @@ function updateDisplay() {
     randomString.textContent = randArray[currentIndex];
     dbg.textContent = currentIndex + " / " + strings.length;
   } else {
-    randomString.textContent = "← or →";
+    randomString.textContent = "←   →";
   }
 }
 
@@ -957,8 +957,8 @@ function handleLeftSideClick() {
 }
 
 function resetInactivityTimer() {
-  clearTimeout(inactivityTimer);
-  inactivityTimer = setTimeout(() => {
+  clearInterval(inactivityTimer);
+  inactivityTimer = setInterval(() => {
     handleRightSideClick(); 
   }, 31000); 
 }
