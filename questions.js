@@ -924,7 +924,7 @@ function updateDisplay() {
     randomString.textContent = randArray[currentIndex];
     dbg.textContent = currentIndex + " / " + strings.length;
   } else {
-    randomString.textContent = "←   →";
+    randomString.textContent = "←Click | Click→";
   }
 }
 
