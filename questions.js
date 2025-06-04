@@ -904,7 +904,10 @@ const strings = [
 	"Tell a campfire story.",
 	"What is one thing or problem you refuse to fix?",
 	"If horses had a voice, what do you think they would sound like?",
-	"Growing up, how was your relationship with the fundamentals of conscious existence?"
+	"Growing up, how was your relationship with the fundamentals of conscious existence?",
+	"If you were a plant, what kind of plant would you be?",
+	"What is your favorite sandwich?"
+	
 	
 	// More to be added. Don't forget final array comma!
 
