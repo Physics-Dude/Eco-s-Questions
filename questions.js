@@ -906,7 +906,8 @@ const strings = [
 	"If horses had a voice, what do you think they would sound like?",
 	"Growing up, how was your relationship with the fundamentals of conscious existence?",
 	"If you were a plant, what kind of plant would you be?",
-	"What is your favorite sandwich?"
+	"What is your favorite sandwich?",
+	"Would you rather only be able to transform yourself into anyhting you wanted, or only be able to transform others?"
 	
 	
 	// More to be added. Don't forget final array comma!
