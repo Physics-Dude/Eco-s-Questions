@@ -997,3 +997,4 @@ document.addEventListener('keydown', (e) => {
 // Initial display
 updateDisplay();
 resetInactivityTimer(); // Start inactivity timer on load
+handleRightSideClick(); // disables instructions
