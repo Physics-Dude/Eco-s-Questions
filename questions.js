@@ -907,8 +907,24 @@ const strings = [
 	"Growing up, how was your relationship with the fundamentals of conscious existence?",
 	"If you were a plant, what kind of plant would you be?",
 	"What is your favorite sandwich?",
-	"Would you rather only be able to transform yourself into anyhting you wanted, or only be able to transform others?"
-	
+	"Would you rather only be able to transform yourself into anyhting you wanted, or only be able to transform others?",
+
+	"What was the specific moment you realized, 'Oh wow, I'm an adult now'?",
+	"Red Pill (Painful Truth) or Blue Pill (Blissful Ignorance)?",
+	"If your story was a book, what would the title of the first chapter",
+	"When did two completely different parts of your life suddenly connect?",
+	"What has the fear of failure stopped you from trying?",
+	"What's a trait of yours that you used to dislike but now appreciate?",
+	"What's a phrase you say WAY too much lately?",
+	"Did you ever start playing a specific game/world just to hang out with someone?",
+	"What's a hobby you stuck with for years but finally dropped? Why?",
+	"What's one core memory from your childhood that still feels vivid?",
+	"If your VR/Online personality is totally different from IRL, which one is the 'Real' you?",
+	"Have you connected with someone from a totally different walk of life?",
+	"What moment seemed ordinary at the time but turned out to be a turning point?",
+	"How do you cope with loneliness?",
+	"Is there a version of yourself that you're afraid for other people to see?",
+	"When do you feel your most attractive?"
 	
 	// More to be added. Don't forget final array comma!
 
